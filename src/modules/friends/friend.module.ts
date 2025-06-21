@@ -6,7 +6,7 @@ import { DatabaseModule } from '@database/database.module';
 import { UserRepository } from '@/modules/users/user.repository';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [],
   controllers: [FriendController],
   providers: [FriendService, FriendRepository, UserRepository],
 })

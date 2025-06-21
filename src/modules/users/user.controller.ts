@@ -25,13 +25,13 @@ export class UserController {
     @Query('limit') limit: number = 10,
     @Query('page') page: number = 0,
   ) {
-    const usersData = await this.userService.searchUsers({
-      firstName: firstName,
-      lastName: lastName,
-      age: age,
-      limit: limit,
-      page: page,
-    });
+    const usersData = await this.userService.searchUsers(
+      limit,
+      page,
+      firstName,
+      lastName,
+      age,
+    );
     return {
       status: 'success',
       data: usersData,

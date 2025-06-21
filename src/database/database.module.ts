@@ -1,6 +1,7 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { pgClientProvider } from './postgres.provider';
 
+@Global()
 @Module({
   providers: [pgClientProvider],
   exports: [pgClientProvider],

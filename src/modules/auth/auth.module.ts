@@ -18,7 +18,6 @@ import { PassportModule } from '@nestjs/passport';
       signOptions: { expiresIn: process.env.JWT_EXPIRATION },
     }),
     PassportModule,
-    DatabaseModule,
     MailModule,
   ],
   controllers: [AuthController],

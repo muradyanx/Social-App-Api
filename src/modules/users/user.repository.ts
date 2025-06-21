@@ -21,19 +21,13 @@ export class UserRepository {
     return user.rows[0];
   }
 
-  async getUsers({
-    firstName,
-    lastName,
-    age,
-    limit,
-    page,
-  }: {
-    firstName?: string;
-    lastName?: string;
-    age?: number;
-    limit: number;
-    page: number;
-  }) {
+  async getUsers(
+    limit: number,
+    page: number,
+    firstName?: string,
+    lastName?: string,
+    age?: number,
+  ) {
     const safePageValue = page > 0 ? page : 1;
     const offset = (safePageValue - 1) * limit;
     const conditions: string[] = [];

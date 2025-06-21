@@ -13,25 +13,19 @@ export class UserService {
     return user;
   }
 
-  async searchUsers({
-    firstName,
-    lastName,
-    age,
-    limit,
-    page,
-  }: {
-    firstName?: string;
-    lastName?: string;
-    age?: number;
-    limit: number;
-    page: number;
-  }) {
-    return await this.userRepository.getUsers({
+  async searchUsers(
+    limit: number,
+    page: number,
+    firstName?: string,
+    lastName?: string,
+    age?: number,
+  ) {
+    return await this.userRepository.getUsers(
+      limit,
+      page,
       firstName,
       lastName,
       age,
-      limit,
-      page,
-    });
+    );
   }
 }
